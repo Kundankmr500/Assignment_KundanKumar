@@ -30,6 +30,7 @@ public static class Constants
 {
     public const string SCORE = "Score : ";
     public const string STREAK = "Streak : ";
+    public const string BESTSCORE = "Best Score : ";
 }
 
 [Serializable]

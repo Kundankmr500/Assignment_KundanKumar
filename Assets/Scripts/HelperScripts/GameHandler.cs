@@ -36,7 +36,7 @@ public class GameHandler : MonoBehaviour
 
     private void Start()
     {
-        Invoke("StartSpawning",0f);
+        Invoke("StartSpawning",2f);
     }
 
     void CreateInstance()
@@ -98,6 +98,13 @@ public class GameHandler : MonoBehaviour
         scoreCount += fruitPoint * streakCount;
         ScoreText.text = Constants.SCORE + scoreCount;
         StreakText.text = Constants.STREAK + streakCount;
+        if (scoreCount > PlayerPrefs.GetInt("BestScore"))
+            SetBestScore(scoreCount);
+    }
+
+    public void SetBestScore(int bestScore)
+    {
+        PlayerPrefs.SetInt("BestScore", bestScore);
     }
     
 
